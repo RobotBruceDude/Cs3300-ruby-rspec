@@ -18,42 +18,77 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  x = 0
-  y = 0
+  result = false
+  sum = 0
 
-  loop do
+  arr.each do |a|
+    arr.each do |b|
+      
+      if a != b
+        sum = a + b
 
-    while x <= arr.length
-      while y <= arr.length
-        total = arr[x] + arr[y]
-        y = y+1
-
-        if total == n
-          break
-        end 
+        if sum == n 
+          result = true
+        end
       end
-      x = x+1
     end
   end
+
+  return result
 
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  sum = "Hello, " + name
+  sum.to_s
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  con = [ "b", "c", "d", "f", "j", "k", "m", "n", "p", "q", "s", "t", "v", "x", "z" ]
+  result = false
+  
+  if s.empty? == false
+    lower = s[0].downcase
+
+    con.each do |current|
+      if current == lower
+        result = true
+      end
+    end
+  end 
+
+  return result
+
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  isChar = /[a-z]/.match(s)
+  bool = isChar.nil?
+
+  if bool == true
+    if s.empty? == false
+      lengthOfString = s.to_i(2)
+      result = lengthOfString % 4
+    end
+  end
+  if bool == false
+    result = 1
+  end
+
+  if result == 0
+    return true
+  end
+  if result == 1
+    return false
+  end
+
+
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+puts BookInStock
 end
