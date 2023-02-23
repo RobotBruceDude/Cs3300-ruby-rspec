@@ -3,15 +3,39 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  
+  #add the array together
+  arr.sum
+
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  
+  #find 2 largest values in array then add them
+  a = arr.max(2)
+  a.sum
+
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  x = 0
+  y = 0
+
+  loop do
+
+    while x <= arr.length
+      while y <= arr.length
+        total = arr[x] + arr[y]
+        y = y+1
+
+        if total == n
+          break
+        end 
+      end
+      x = x+1
+    end
+  end
+
 end
 
 # Part 2
